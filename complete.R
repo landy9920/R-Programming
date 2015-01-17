@@ -12,6 +12,7 @@ complete <- function(directory, id = 1:332) {
   ## ...
   ## where 'id' is the monitor ID number and 'nobs' is the
   ## number of complete cases 
+  
   files <- list.files( path = directory )[id]
   files <- files[!is.na(files)]
   
@@ -20,8 +21,8 @@ complete <- function(directory, id = 1:332) {
   
   for(f in 1:length(files)){
     data <- read.csv( paste(directory, "/", files[f], sep="") )
-    id = c(id, as.integer(substring(files[f],0,3)) )                       # append to vector
-    nobs = c(nobs, nrow(na.omit(data))) # append to vector, num rows, omit NA
+    id = c(id, as.integer(substring(files[f],0,3)) )              # append to vector
+    nobs = c(nobs, nrow(na.omit(data)))                           # append to vector, num rows, omit NA
   }
   return( data.frame(id=id, nobs=nobs) )
 }
