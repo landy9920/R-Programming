@@ -15,7 +15,7 @@
        id <- as.integer(id)
        pollutant <- as.character(pollutant)
        directory <- as.character(directory)
-       setwd(paste("/Users/harakazushi/Desktop/",directory, sep= ""))
+       setwd(paste("/Users/landy9920/Documents/",directory, sep= ""))
        x <-c()
        for (i in id) {
           	 if (i < 10){
